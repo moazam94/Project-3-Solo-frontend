@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "create": "^0.0.2",
+    "react-app": "^1.1.2"
+  },
+  "name": "project-3-solo-frontend",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moazam94/Project-3-Solo-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moazam94/Project-3-Solo-frontend/issues"
+  },
+  "homepage": "https://github.com/moazam94/Project-3-Solo-frontend#readme"
+}

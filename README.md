@@ -24,12 +24,12 @@ For this project, I will be creating an app that allows users to purchase electr
 ## Routes ##
 - app.post ('/users') create user/account
 - app.post ('/users/login') login user
-- app.get ('/items') view items
-- app.get ('/items/:id') view item details
+- app.get ('/items') view all items
+- app.get ('/items/:id') view specific item details
 - app.post ('/cart') add item to cart
 - app.get ('/cart') view item in cart
 - app.delete ('/cart') remove item from cart
-- app.get ('users/order/orderId') view a single order
+- app.get ('users/order/:id') view a single order
 - app.get ('/users/order') view all orders
 
 ## MVP Checklist ##
@@ -41,4 +41,4 @@ For this project, I will be creating an app that allows users to purchase electr
 - User is able to logout
 
 ## Stretch Goals ##
-
+- Implement ratings for each item

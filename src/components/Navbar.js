@@ -4,7 +4,7 @@ const Navbar = (props) => {
     return (
         <nav>
             <ul>
-                { props.user.id ?
+                { !localStorage.getItem('userId') ?
                 <>
                     <li>
                         <Link to='/users'>Create Account</Link>
@@ -25,11 +25,11 @@ const Navbar = (props) => {
                         <Link to='/users/orders'>Orders</Link>
                     </li>
                     <li className="nav-links-logged-in">
-                        <Link to='/uesrs/checkout'>Checkout</Link>
+                        <Link to='/users/checkout'>Checkout</Link>
                     </li>
                     <li className="nav-links-logged-in" onClick={() => {
                         localStorage.removeItem('userId')
-                        /// probably another action here
+                        props.setUser({})
                     }}>
                         Log Out
                     </li>

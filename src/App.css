@@ -1,4 +1,53 @@
 .App {
   text-align: center;
+  color: white;
+            font-size: 50px;
+            text-shadow: -1px 1px 0 #000,
+                          1px 1px 0 #000,
+                         1px -1px 0 #000,
+                        -1px -1px 0 #000;
 }
 
+body {
+  background-image:  url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.blanchardphotomv.com%2Fwarehouse%2Fart_print_products%2Finkwell-christmas-sunrise&psig=AOvVaw33WM-8tg2PLDUjSa9avpua&ust=1639664509571000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOjGuLaA5vQCFQAAAAAdAAAAABAJ);
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  background-size: cover;
+  font-family: cursive;
+  font-size: x-large;
+  text-shadow: 2px 2px rgb(21, 189, 245);
+  color:rgb(43, 43, 43)
+}
+
+
+ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  background-color:aquamarine;
+}
+li {
+  display: flex;
+  margin: 10px;
+}
+.nav-links-logged-in {
+  display: flex;
+  justify-content: flex-end;
+}
+input {
+  margin: 15px;
+}
+
+img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.singleItem, .checkoutItem, .orderItem {
+  border: 1px solid black;
+}
+
+button {
+  border-radius: 8px;
+}

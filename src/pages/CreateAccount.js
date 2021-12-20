@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const createAccount = (props) => {
+const CreateAccount = (props) => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -41,10 +41,10 @@ const submitForm = (e) => {
             </div>
 
             <div>
-                <input type='submit' value='createAccount' />    
+                <input type='submit' value='CreateAccount' />    
             </div> 
         </form>
     )
 }
 
-export default createAccount;
+export default CreateAccount;

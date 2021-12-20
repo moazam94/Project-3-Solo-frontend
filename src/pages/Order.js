@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Order = (props) => {
@@ -8,7 +8,7 @@ const Order = (props) => {
     const getItems = async () => {
         try {
             const response = await axios.get(`https://localhost:3001/orders/${props.id}`)
-            setBooks(response.data.books);
+            setItems(response.data.books);
         } catch (error) {
             console.log(error);
             alert('Bad request; try again');
@@ -21,7 +21,7 @@ const Order = (props) => {
 
     return (
         <div>
-            {books.map((item) => {
+            {items.map((item) => {
                 return (
                     <div>
                         {item.name} {' '} {item.price}

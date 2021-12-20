@@ -2,11 +2,11 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect  } from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/HomePage';
-import createAccount from './pages/CreateAccount';
+import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';
 import Cart from './pages/CartList';
 import Checkout from './pages/Checkout';
-import Order from './pages/order';
+import Order from './pages/Order';
 import './App.css';
 import axios from 'axios';
 
@@ -52,7 +52,7 @@ function App() {
 //   }
 // }
 
-const pastOrders = async () => {
+const PastOrders = async () => {
   const userId = localStorage.getItem('userId');
   try {
     let response = await axios.get(`http:localhost:3001/users/orders`, {userId: userId}); 
@@ -69,7 +69,7 @@ const pastOrders = async () => {
 
 useEffect(() => {
   if (localStorage.getItem('userId')) {
-    pastOrders()
+    PastOrders()
   }
 }, [])
 
@@ -89,7 +89,7 @@ return (
 
       <Route path="/users" element={
         user.id ? <Navigate to="/home"/> :
-        <createAccount user={user} setUser={setUser} />} />
+        <CreateAccount user={user} setUser={setUser} />} />
 
       {/* <Route path="/home" element={
         user.id ? <Navigate to="/users/login"/> :
@@ -121,5 +121,5 @@ return (
   </div>
 );
 }
-
-export default App:
+}
+export default App;

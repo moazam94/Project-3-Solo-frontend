@@ -16,7 +16,7 @@ const Cart = (props) => {
                         <img alt="itemInfo" src={item.image} />
                         <button
                             className="deleteButton"
-                            onClick={() => {props.userCart.filter(item => item !== book)}}>remove</button>
+                            onClick={() => {props.userCart.filter(item => item !== item)}}>remove</button>
                 </div>
             ))
             }

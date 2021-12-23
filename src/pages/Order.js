@@ -8,7 +8,7 @@ const Order = (props) => {
     const getItems = async () => {
         try {
             const response = await axios.get(`https://localhost:3001/orders/${props.id}`)
-            setItems(response.data.books);
+            setItems(response.data.items);
         } catch (error) {
             console.log(error);
             alert('Bad request; try again');

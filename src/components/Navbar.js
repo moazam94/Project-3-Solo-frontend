@@ -4,7 +4,7 @@ const Navbar = (props) => {
     return (
         <nav>
             <ul>
-                { !localStorage.getItem('userId') ?
+                { props.user.id ?
                 <>
                     <li>
                         <Link to='/users'>Create Account</Link>

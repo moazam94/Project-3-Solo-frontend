@@ -10,6 +10,7 @@ import Order from './pages/Order';
 import './App.css';
 import axios from 'axios';
 
+
 function App() {
 
   const [ user, setUser ] = useState({});
@@ -52,27 +53,6 @@ function App() {
 //   }
 // }
 
-const PastOrders = async () => {
-  const userId = localStorage.getItem('userId');
-  try {
-    let response = await axios.get(`http:localhost:3001/users/orders`, {userId: userId}); 
-    console.log(response);
-    setUserOrders(response.data) 
-    let orders = [];
-    for (let order of response.data) {
-      orders.push(order.name) 
-    }
-  } catch (error) {
-    console.log(error);
-  }
-
-
-useEffect(() => {
-  if (localStorage.getItem('userId')) {
-    PastOrders()
-  }
-}, [])
-
 
 return (
   <div className="App">
@@ -80,8 +60,6 @@ return (
     <Navbar className="App-header" user={user} setUser={setUser} />
 
     <Routes>
-      {/* <Route path="*" element={<Home />} />
-      <Route path="/" element={<Home />} /> */}
 
       <Route path="/users/login" element={
         user.id ? <Navigate to="/home"/> :
@@ -91,35 +69,18 @@ return (
         user.id ? <Navigate to="/home"/> :
         <CreateAccount user={user} setUser={setUser} />} />
 
-      {/* <Route path="/home" element={
-        user.id ? <Navigate to="/users/login"/> :
-        <Home user={user} setUser={setUser} userCart={userCart} setUserCart={setUserCart} />} /> */}
-
       <Route path="/home" element={<Home user={user} setUser={setUser} userCart={userCart} setUserCart={setUserCart} />} /> 
-
-      {/* <Route path="/users/cart" element={
-        !user.id ? <Navigate to="/users/login"/> :
-        <Cart user={user} setUser={setUser} userCart={userCart} setUserCart={setUserCart} />} /> */}
 
       <Route path="/users/cart" element={<Cart userCart={userCart} setUserCart={setUserCart} />} /> 
 
-
-      {/* <Route path="/users/orders" element={
-        !user.id ? <Navigate to="/users/login"/> :
-        <Orders user={user} setUser={setUser} useOrders={useOrders} setUseOrders={setUseOrders} />} /> */}
-
       <Route path="users/orders" element={<Order userOrders={userOrders} />} /> 
 
-      {/* <Route path="/users/checkout" element={
-        !user.id ? <Navigate to="/users/login"/> :
-        <Checkout user={user} setUser={setUser} userCart={userCart} userOrders={userOrders} setUserOrders={setUserOrders} />} /> */}
-
-      <Route path="/users/checkout" element={<Checkout userCart={userCart} userOrders={userOrders} setUserOrders={setUserOrders} />} /> // unconditional alt for code above, comment out later
+      <Route path="/users/checkout" element={<Checkout userCart={userCart} userOrders={userOrders} setUserOrders={setUserOrders} />} /> 
 
     </Routes>
 
   </div>
 );
 }
-}
+
 export default App;

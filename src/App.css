@@ -15,26 +15,32 @@ body {
   justify-content: center;
   background-size: cover;
   font-family:'Times New Roman', Times, serif;
-  font-size: x-large;
+  font-size: large;
   text-shadow: 2px 2px darkred;
   color:rgb(43, 43, 43)
 }
 
 
 ul {
-  display: flex;
+  text-align: center;
+  /* display: flex; */
+  display: inline-flex;
   justify-content: flex-start;
   list-style: none;
-  background-color: brown;
+  background-color:dimgrey;
+  font-size: xx-large;
 }
 li {
   display: flex;
   margin: 10px;
 }
+
 .nav-links-logged-in {
+  text-align: center;
   display: flex;
   justify-content: flex-end;
 }
+
 input {
   margin: 15px;
 }
@@ -50,5 +56,13 @@ img {
 
 button {
   border-radius: 8px;
+}
+
+.searchResults {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
 }
 

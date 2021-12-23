@@ -8,7 +8,7 @@ const Checkout = (props) => {
     const [city, setCity] = useState('')
     const [state, setState] = useState('')
     const [zip, setZip] = useState('')
-    const [cardNumber, setCardNumber] = useState('')
+    const [cardInfo, setCardInfo] = useState('')
 
     const completeOrder = async () => {
         const userId = localStorage.getItem('userId')
@@ -20,14 +20,14 @@ const Checkout = (props) => {
                 city: city,
                 state: state,
                 zip: zip,
-                cardNumber: cardNumber
+                cardInfo: cardInfo
             }
           )
            // props.setUserOrders(props.userCart)
-           console.log(props.userCart.map(book => book.id))
+           console.log(props.userCart.map(item => item.id))
            // let previousOrders = [];
            // let res = await axios.post(`http://localhost:3001/users/orders`)
-           // console.log(res) 
+             console.log(response) 
            // for (let order of res.data.orders) {
            //     previousOrders.push(order)
            // }
@@ -57,7 +57,7 @@ const Checkout = (props) => {
                 <input type="text" value={city} placeholder="City" onChange={(e) => {setCity(e.target.value)}} />
                 <input type="text" value={state} placeholder="State" onChange={(e) => {setState(e.target.value)}} />
                 <input type="text" value={zip} placeholder="Zip Code" onChange={(e) => {setZip(e.target.value)}} />
-                <input type="text" value={cardNumber} placeholder="Credit Card Number" onChange={(e) => {setCardNumber(e.target.value)}} />
+                <input type="text" value={cardInfo} placeholder="Credit Card Number" onChange={(e) => {setCardInfo(e.target.value)}} />
                 </form>
                 <Link to='/users/order'>
                     <button onClick={completeOrder}>Complete Purchase</button>
